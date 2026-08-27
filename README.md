@@ -1,5 +1,7 @@
 # Stockfish vs Stockfish
 
+# WEBSITE: https://lucasli1337unknown.github.io/StockFishBattle/
+
 Two independent Stockfish 18 Lite WASM engines play against each other automatically in the browser.
 
 ## IMPORTANT
