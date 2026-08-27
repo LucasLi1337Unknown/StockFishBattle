@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stockfish vs Stockfish</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">ENGINE ARENA</p>
+        <h1>Stockfish vs Stockfish</h1>
+        <p class="subtitle">Two Stockfish 18 Lite WASM engines fighting in your browser.</p>
+      </div>
+      <div id="statusBadge" class="badge waiting">LOADING ENGINES</div>
+    </header>
+
+    <section class="arena">
+      <div class="left">
+        <div class="players">
+          <div class="player">
+            <div>
+              <span class="player-label">BLACK</span>
+              <strong>Stockfish B</strong>
+            </div>
+            <span id="blackState">Starting…</span>
+          </div>
+        </div>
+
+        <div class="board-frame"><div id="board" class="board"></div></div>
+
+        <div class="players">
+          <div class="player">
+            <div>
+              <span class="player-label">WHITE</span>
+              <strong>Stockfish A</strong>
+            </div>
+            <span id="whiteState">Starting…</span>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="startBtn" class="primary">Start Battle</button>
+          <button id="pauseBtn">Pause</button>
+          <button id="stepBtn">One Move</button>
+          <button id="resetBtn">New Game</button>
+          <button id="flipBtn">Flip Board</button>
+        </div>
+
+        <p id="gameStatus" class="game-status">Waiting for both engines…</p>
+      </div>
+
+      <aside class="sidebar">
+        <section class="card">
+          <h2>Battle Settings</h2>
+          <label><span>White depth <b id="whiteDepthValue">10</b></span><input id="whiteDepth" type="range" min="1" max="18" value="10" /></label>
+          <label><span>Black depth <b id="blackDepthValue">10</b></span><input id="blackDepth" type="range" min="1" max="18" value="10" /></label>
+          <label><span>Move delay <b id="delayValue">500 ms</b></span><input id="moveDelay" type="range" min="0" max="3000" step="100" value="500" /></label>
+        </section>
+
+        <section class="card">
+          <h2>Current Position</h2>
+          <div class="stat-grid">
+            <div><span>Turn</span><strong id="turnText">White</strong></div>
+            <div><span>Ply</span><strong id="plyText">0</strong></div>
+            <div><span>White eval</span><strong id="whiteEval">—</strong></div>
+            <div><span>Black eval</span><strong id="blackEval">—</strong></div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="card-title"><h2>Moves</h2><button id="copyPgnBtn" class="mini">Copy PGN</button></div>
+          <pre id="moves">No moves yet.</pre>
+        </section>
+
+        <section class="card">
+          <div class="card-title"><h2>Engine Log</h2><button id="clearLogBtn" class="mini">Clear</button></div>
+          <pre id="log">Booting two engines…</pre>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
